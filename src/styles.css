@@ -58,4 +58,33 @@
     inset: 0;
     padding: max(18px, env(safe-area-inset-top)) 22px max(92px, env(safe-area-inset-bottom));
   }
+  /* Полностью убираем эффект "iPhone внутри iPhone" везде */
+body {
+  display: block !important;
+  padding: 0 !important;
+  min-height: 100dvh;
 }
+
+.device {
+  width: 100vw !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  overflow: hidden !important;
+}
+
+.device::after,
+.dynamic-island,
+.statusbar {
+  display: none !important;
+}
+
+.view {
+  inset: 0 !important;
+  padding: max(18px, env(safe-area-inset-top)) 22px max(92px, env(safe-area-inset-bottom)) !important;
+}
+
